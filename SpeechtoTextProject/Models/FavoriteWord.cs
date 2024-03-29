@@ -19,5 +19,7 @@ public partial class FavoriteWord
 
     public string? AudioSource { get; set; }
 
+    public int Id { get; set; }
+
     public virtual UsersTable User { get; set; } = null!;
 }

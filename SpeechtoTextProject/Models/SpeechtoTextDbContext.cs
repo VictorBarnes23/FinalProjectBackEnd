@@ -27,7 +27,7 @@ public partial class SpeechtoTextDbContext : DbContext
     {
         modelBuilder.Entity<FavoriteWord>(entity =>
         {
-            entity.HasNoKey();
+            entity.HasKey(e => e.Id).HasName("PK__Favorite__3214EC072048D279");
 
             entity.Property(e => e.AudioSource).HasMaxLength(400);
             entity.Property(e => e.Context).HasMaxLength(4000);
@@ -37,7 +37,7 @@ public partial class SpeechtoTextDbContext : DbContext
             entity.Property(e => e.UserId).HasMaxLength(255);
             entity.Property(e => e.Word).HasMaxLength(255);
 
-            entity.HasOne(d => d.User).WithMany()
+            entity.HasOne(d => d.User).WithMany(p => p.FavoriteWords)
                 .HasForeignKey(d => d.UserId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__FavoriteW__UserI__5DCAEF64");
