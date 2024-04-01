@@ -9,7 +9,7 @@ namespace SpeechtoTextProject.Controllers
     [ApiController]
     public class FavoriteController : ControllerBase
     {
-        private SpeechtoTextDbContext DbContext = new SpeechtoTextDbContext();
+        private SpeechtoTextContext DbContext = new SpeechtoTextContext();
 
 
         [HttpGet()]

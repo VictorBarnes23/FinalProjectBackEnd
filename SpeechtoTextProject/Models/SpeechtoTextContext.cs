@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace SpeechtoTextProject.Models;
 
-public partial class SpeechtoTextDbContext : DbContext
+public partial class SpeechtoTextContext : DbContext
 {
-    public SpeechtoTextDbContext()
+    public SpeechtoTextContext()
     {
     }
 
-    public SpeechtoTextDbContext(DbContextOptions<SpeechtoTextDbContext> options)
+    public SpeechtoTextContext(DbContextOptions<SpeechtoTextContext> options)
         : base(options)
     {
     }
@@ -27,7 +27,7 @@ public partial class SpeechtoTextDbContext : DbContext
     {
         modelBuilder.Entity<FavoriteWord>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Favorite__3214EC072048D279");
+            entity.HasKey(e => e.Id).HasName("PK__Favorite__3214EC0784705BC0");
 
             entity.Property(e => e.AudioSource).HasMaxLength(400);
             entity.Property(e => e.Context).HasMaxLength(4000);
@@ -45,7 +45,7 @@ public partial class SpeechtoTextDbContext : DbContext
 
         modelBuilder.Entity<UsersTable>(entity =>
         {
-            entity.HasKey(e => e.GoogleId).HasName("PK__UsersTab__A6FBF2FAFB837A3B");
+            entity.HasKey(e => e.GoogleId).HasName("PK__UsersTab__A6FBF2FA62683924");
 
             entity.ToTable("UsersTable");
 
