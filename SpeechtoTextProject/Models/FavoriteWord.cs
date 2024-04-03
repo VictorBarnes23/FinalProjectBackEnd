@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace SpeechtoTextProject.Models;
 
@@ -21,5 +22,6 @@ public partial class FavoriteWord
 
     public int Id { get; set; }
 
-    public virtual UsersTable User { get; set; } = null!;
+
+    public virtual UsersTable? User { get; set; } = null!;
 }
