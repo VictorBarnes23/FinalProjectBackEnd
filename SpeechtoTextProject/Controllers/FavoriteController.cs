@@ -40,10 +40,10 @@ namespace SpeechtoTextProject.Controllers
 
 
         [HttpPut("{id}")]
-        public IActionResult UpdateFav(int id,[FromBody] string newContext )
+        public IActionResult UpdateFav(int id,[FromBody] FavoriteWord f )
         {
             FavoriteWord FavWord = DbContext.FavoriteWords.Find(id);
-            FavWord.Context = newContext;
+            FavWord.Context = f.Context;
             
             if (FavWord == null)
             {
