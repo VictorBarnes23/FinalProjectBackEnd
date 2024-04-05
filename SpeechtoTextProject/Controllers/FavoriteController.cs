@@ -60,12 +60,12 @@ namespace SpeechtoTextProject.Controllers
 
 
         [HttpDelete("{id}")]
-        public IActionResult DeleteById(string id)
+        public IActionResult DeleteById(int id)
         {
-            FavoriteWord result = DbContext.FavoriteWords.FirstOrDefault(f => f.UserId == id);
+            FavoriteWord result = DbContext.FavoriteWords.FirstOrDefault(f => f.Id == id);
             if(result == null)
             {
-                return NotFound();
+                return NotFound($"No favorite found for id: {id} ");
             }
             DbContext.FavoriteWords.Remove(result);
             DbContext.SaveChanges();
