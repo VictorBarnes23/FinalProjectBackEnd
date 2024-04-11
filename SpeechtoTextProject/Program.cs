@@ -9,7 +9,7 @@ builder.Services.AddCors(options =>
             //replace localhost with yours
             //also add your deployed website
             policy.WithOrigins("http://localhost:4200",
-                                "https://agreeable-coast-07ac72f0f.5.azurestaticapps.net").AllowAnyMethod().AllowAnyHeader();
+                                "https://polite-sky-03509e40f.5.azurestaticapps.net").AllowAnyMethod().AllowAnyHeader();
         });
 });
 
